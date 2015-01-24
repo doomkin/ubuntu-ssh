@@ -13,9 +13,9 @@ This repository contains **Dockerfile** of [Ubuntu](http://www.ubuntu.com/) for 
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/ubuntu/) from public [Docker Hub Registry](https://registry.hub.docker.com/: `docker pull doomkin/ubuntu`
+2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/ubuntu/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull doomkin/ubuntu`
 
-3. Alternatively, you can build an image from Dockerfile: `docker build -t="doomkin/ubuntu" github.com/doomkin/ubuntu`)
+3. Alternatively, you can build an image from Dockerfile: `docker build -t="doomkin/ubuntu" github.com/doomkin/ubuntu`
 
 
 ### Usage
