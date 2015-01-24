@@ -19,8 +19,8 @@ RUN apt-get update && apt-get upgrade -y
 RUN \
     apt-get install -y openssh-server && \
     mkdir /var/run/sshd && \
-	sed -i 's/#PasswordAuthentication no/PasswordAuthentication no/' /etc/ssh/sshd_config && \
-	sed -i 's/PermitRootLogin yes/PermitRootLogin without-password/' /etc/ssh/sshd_config && \
+    sed -i 's/#PasswordAuthentication no/PasswordAuthentication no/' /etc/ssh/sshd_config && \
+    sed -i 's/PermitRootLogin yes/PermitRootLogin without-password/' /etc/ssh/sshd_config && \
     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
 
 # Add ssh authorized keys
