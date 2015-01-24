@@ -6,18 +6,24 @@ This repository contains **Dockerfile** of [Ubuntu](http://www.ubuntu.com/) for 
 
 ### Base Docker Image
 
-* [ubuntu:14.04](https://registry.hub.docker.com/u/library/ubuntu/)
+* [doomkin/ubuntu](https://registry.hub.docker.com/u/doomkin/ubuntu/)
 
 
 ### Installation
 
 1. Install [Docker](https://www.docker.com/).
 
-2. Download [automated build](https://registry.hub.docker.com/u/dockerfile/ubuntu/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull doomkin/ubuntu`
+2. Download [automated build](https://registry.hub.docker.com/u/doomkin/ubuntu-ssh/) from public [Docker Hub Registry](https://registry.hub.docker.com/): `docker pull doomkin/ubuntu-ssh`
 
-3. Alternatively, you can build an image from Dockerfile: `docker build -t="doomkin/ubuntu" github.com/doomkin/ubuntu`
+3. Alternatively, you can build an image from Dockerfile: `docker build -t="doomkin/ubuntu-ssh" github.com/doomkin/ubuntu-ssh`
 
 
-### Usage
+### Run
 
-    docker run -it --rm doomkin/ubuntu
+    sudo docker run --name ubuntu-ssh -it -d -P doomkin/ubuntu-ssh
+
+### Login
+
+    ssh-agent -s
+    ssh-add ssh/id_rsa
+    ssh root@localhost -p `sudo docker port ubuntu-ssh 22 | cut -d":" -f2`
