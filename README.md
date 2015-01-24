@@ -6,7 +6,7 @@ This repository contains **Dockerfile** of [Ubuntu](http://www.ubuntu.com/) for 
 
 ### Base Docker Image
 
-* [doomkin/ubuntu](https://registry.hub.docker.com/u/doomkin/ubuntu/)
+* [doomkin/ubuntu](https://github.com/doomkin/ubuntu)
 
 
 ### Installation
