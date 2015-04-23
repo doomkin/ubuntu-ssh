@@ -6,7 +6,7 @@ This repository contains **Dockerfile** of [Ubuntu](http://www.ubuntu.com/) for 
 
 ### Base Docker Image
 
-* [doomkin/ubuntu](https://github.com/doomkin/ubuntu)
+* [ubuntu:14.04](https://registry.hub.docker.com/_/ubuntu/)
 
 
 ### Installation
@@ -20,10 +20,10 @@ This repository contains **Dockerfile** of [Ubuntu](http://www.ubuntu.com/) for 
 
 ### Run
 
-    sudo docker run --name ubuntu-ssh -it -d -P doomkin/ubuntu-ssh
+    sudo docker run --name ssh -it -d -P doomkin/ubuntu-ssh
 
 ### Login
 
-    ssh-agent -s
+    eval `ssh-agent -s`
     ssh-add ssh/id_rsa
-    ssh root@localhost -p `sudo docker port ubuntu-ssh 22 | cut -d":" -f2`
+    ssh root@localhost -p `sudo docker port ssh 22 | cut -d":" -f2`
