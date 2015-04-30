@@ -26,7 +26,7 @@ RUN apt-get update; \
     make; \
     /tmp/p7zip_9.38.1/install.sh; \
     rm -fr /tmp/*; \
-    locale-gen en_US.UTF-8; update-locale LANG=en_US.UTF-8; \
+    locale-gen en_US.UTF-8; update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8; \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config; \
     sed -i 's/PermitRootLogin yes/PermitRootLogin without-password/' /etc/ssh/sshd_config; \
     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd; \
