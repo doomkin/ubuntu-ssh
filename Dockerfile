@@ -1,21 +1,14 @@
-#
-# doomkin/ubuntu-ssh Dockerfile
-#
 # Build: sudo docker build -t doomkin/ubuntu-ssh .
 # Run:   sudo docker run --name ssh -it -d -P doomkin/ubuntu-ssh
 # Login: eval `ssh-agent -s`; ssh-add ssh/id_rsa; ssh root@localhost -p `sudo docker port ssh 22 | cut -d":" -f2`
-#
 
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 MAINTAINER Pavel Nikitin <p.doomkin@ya.ru>
 
-# Set the noninteractive frontend
 ENV DEBIAN_FRONTEND noninteractive
 
-# SSH key without password
 ADD ssh/id_rsa.pub /root/.ssh/authorized_keys
 
-# Install essentials
 RUN apt-get update; \
     apt-get install -y apt-utils debconf-utils iputils-ping wget curl mc htop ssh; \
     apt-get clean; \
@@ -26,6 +19,4 @@ RUN apt-get update; \
     sed -i 's/^exit 0/service ssh start\nexit 0/' /etc/rc.local
 
 EXPOSE 22
-
-# Default command
 CMD /etc/rc.local; bash
