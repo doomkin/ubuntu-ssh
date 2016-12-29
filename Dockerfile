@@ -3,7 +3,7 @@
 # Login: eval `ssh-agent -s`; ssh-add ssh/id_rsa; ssh root@localhost -p `sudo docker port ssh 22 | cut -d":" -f2`
 
 FROM ubuntu:14.04
-MAINTAINER Pavel Nikitin <p.doomkin@ya.ru>
+MAINTAINER Pavel Doomkin
 
 ENV DEBIAN_FRONTEND noninteractive
 
