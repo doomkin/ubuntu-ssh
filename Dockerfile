@@ -2,7 +2,7 @@
 # Run:   sudo docker run --name ssh -it -d -P doomkin/ubuntu-ssh
 # Login: eval `ssh-agent -s`; ssh-add ssh/id_rsa; ssh root@localhost -p `sudo docker port ssh 22 | cut -d":" -f2`
 
-FROM ubuntu:14.04
+FROM ubuntu:22.04
 MAINTAINER Pavel Doomkin
 
 ENV DEBIAN_FRONTEND noninteractive
